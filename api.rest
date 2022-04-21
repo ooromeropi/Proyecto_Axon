@@ -1,0 +1,87 @@
+###
+
+GET http://localhost:4000/api/incident
+
+###
+POST http://localhost:4000/api/incident
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNWQ3MjIzMDg3ZTc3Zjg2ZDY4ZDEyZCIsImlhdCI6MTY1MDI5MTI4MCwiZXhwIjoxNjUwMzc3NjgwfQ.9ZVGvx39Ih80agRar-C4wCn3L6qAjFyJR60Hkli1Vcc
+
+
+{
+      
+  "Descripcion": "El niño tiene bronquiolitos",
+  "FechaRecibo": "01032020",
+  "HoraRecibo": "11:00",
+  "NumReq": "REQ0001",
+  "NumInc": "INC0001",
+  "AreaReporte": "Familia",
+  "Aplicacion": "Prueba",
+  "Tipologia": "Prueba",
+  "Impacto": "Alto",
+  "EscaladoA": "Tania",
+  "FechaEscalamiento": "01032020",
+  "HoraEscalamiento": "15:00",
+  "EscaladoPor": "Tania",
+  "RecibidoPor": "Clinica",
+  "Estado": "En Gestion",
+  "Resolucion": "",
+  "FechaCierre": "",
+  "HoraCierre": ""
+}
+
+
+###
+PUT http://localhost:4000/api/incident
+Content-Type: application/json
+
+{
+   "name": "Oscar"
+ }
+
+###
+GET  http://localhost:4000/api/incident/620ec053a7b1325bddfe009a
+
+###
+DELETE  http://localhost:4000/api/incident/620ec053a7b1325bddfe009a
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDdkN2E2YThhYjY5NzY4ZWI2NjVjMyIsImlhdCI6MTY0ODg3NTQ0MSwiZXhwIjoxNjQ4OTYxODQxfQ.Z9TB6UKunRDnYaLQb-MDY-9rH5X_NeU_jNvKn_gGWNo
+
+
+###
+POST http://localhost:4000/api/auth/signup
+Content-Type: application/json
+
+
+
+
+{
+      
+  "username": "GATOPREZAsss2",
+  "password": "12345",
+  "roles" : ["A"]
+}
+
+
+###
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+      
+  "username": "ooromeropi",
+  "password": "12345"
+}
+
+###
+
+POST http://localhost:4000/api/users
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDhlMDYxNjVkODUyMzg0Yjg4NGFmMyIsImlhdCI6MTY0ODk0MzIxMiwiZXhwIjoxNjQ5MDI5NjEyfQ.bF9dVdDhga5EEzjPftrZBEW-Upt9wubk9Xziu86NwiE
+Content-Type: application/json
+
+{
+      
+  "username": "LEONILDE",
+  "email": "leito@gmail.com",
+  "password": "12345",
+  "roles" : ["Visitante"]
+}
