@@ -1,0 +1,68 @@
+<div class="col-md-3  p-3">
+<nav>
+    <a class="btn btn-primary" routerLink="/form">Nuevo Incidente</a>
+</nav>
+</div>
+<div class="row  p-3">
+    
+
+    
+    
+    <div class="col-md-12">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+<th>FechaRecibo</th>
+<th>HoraRecibo</th>
+<th>NumReq</th>
+<th>NumInc</th>
+<th>AreaReporte</th>
+<th>Aplicacion</th>
+<th>Tipologia</th>
+<th>Impacto</th>
+<th>EscaladoA</th>
+<th>FechaEscalamiento</th>
+<th>HoraEscalamiento</th>
+<th>EscaladoPor</th>
+<th>RecibidoPor</th>
+<th>Estado</th>
+<th>Resolucion</th>
+<th>FechaCierre</th>
+<th>HoraCierre</th>
+
+                </tr>
+            </thead>     
+  <tbody>
+    <tr *ngFor="let incident of incidentService.incidents | paginate: { itemsPerPage: 7, currentPage:pageActual }">
+        <td>{{ incident.Descripcion }} </td>
+<td>{{ incident.FechaRecibo }} </td>
+<td>{{ incident.HoraRecibo }} </td>
+<td>{{ incident.NumReq }} </td>
+<td>{{ incident.NumInc }} </td>
+<td>{{ incident.AreaReporte }} </td>
+<td>{{ incident.Aplicacion }} </td>
+<td>{{ incident.Tipologia }} </td>
+<td>{{ incident.Impacto }} </td>
+<td>{{ incident.EscaladoA }} </td>
+<td>{{ incident.FechaEscalamiento }} </td>
+<td>{{ incident.HoraEscalamiento }} </td>
+<td>{{ incident.EscaladoPor }} </td>
+<td>{{ incident.RecibidoPor }} </td>
+<td>{{ incident.Estado }} </td>
+<td>{{ incident.Resolucion }} </td>
+<td>{{ incident.FechaCierre }} </td>
+<td>{{ incident.HoraCierre }} </td>
+
+        <td>
+            <button class="btn btn-secondary btn-sm"> 
+                <i class="material-icons">edit</i>
+            </button>
+           
+        </td>
+    </tr>
+</tbody>
+</table>
+<pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+</div>
+</div>

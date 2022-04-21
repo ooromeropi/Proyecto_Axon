@@ -1,0 +1,137 @@
+<div class="col-md-8 p-4 container p-2 ">
+    <nav class="navbar navbar-dark bg-dark border card body p-2">
+       <div class="container p-2">
+            <a class="navbar-brand" href="/form">Registro Incidente</a>
+        </div>
+      </nav>
+    <div class="card p-2">
+        <div class="card body p-2">
+        
+            <form [formGroup]="IncidentsForm" (ngSubmit)="addIncident(IncidentsForm)">
+               
+                <div class="form-group p-2">
+                  <legend>Descripcion</legend><textarea class="border" formControlName="Descripcion" type="text"  placeholder="" required> </textarea>
+                </div>
+                <div class="form-group p-2">
+                   <legend>Fecha Recibido</legend> <input class="border" type="date" formControlName="FechaRecibo" placeholder="" required> 
+                 </div>
+                 <div class="form-group p-2">
+                  <legend>Hora Recibido</legend><input class="border" type="time" formControlName="HoraRecibo" placeholder="" required>
+                 </div>
+                 <div class="form-group p-2">
+                  <legend>Num Req</legend><input class="border" type="text" formControlName="NumReq" placeholder="" required>
+                 </div>
+                 <div class="form-group p-2">
+                    <legend>Num Inc</legend><input class="border" type="text" formControlName="NumInc" placeholder="" required>
+                   </div>
+                  <div class="form-group p-2">
+                  <legend>Area Reporte</legend><select class="border" formControlName="AreaReporte" required>
+                       <option value=""></option>      
+                       <option value="MONITOREO">MONITOREO</option>   
+                       <option value="ASEGURAMIENTO TECNICO">ASEGURAMIENTO TECNICO</option>
+                       <option value="VMO">VMO</option>
+                       <option value="NUMERAL 728">NUMERAL 728</option>
+                       <option value="ACTIVACIONES">ACTIVACIONES</option>
+                       <option value="CENTRO DE COMANDO">CENTRO DE COMANDO</option>
+                       <option value="BACKOFFICE">BACKOFFICE</option>
+                       <option value="BI">BI</option>
+                       <option value="CENTRO DE EXPERIENCIA">CENTRO DE EXPERIENCIA</option>
+                       <option value="FACTURACION">FACTURACION</option>
+                       <option value="COBRANZAS">COBRANZAS</option>
+                       <option value="CALIDAD DE VENTAS">OTROS</option>
+                   </select>
+                </div>
+                <div class="form-group p-2">
+                    <legend>Aplicacion</legend><input class="border" type="text" formControlName="Aplicacion" placeholder="">
+                   </div>
+                   <div class="form-group p-2">
+                    <legend>Tipologia</legend><input class="border" type="text" formControlName="Tipologia" placeholder="">
+                   </div>
+                   <div class="form-group p-2">
+                    <legend>Impacto</legend><select class="border" formControlName="Impacto" required>
+                           <option value=""></option>  
+                           <option value="Alto">Alto</option>
+                           <option value="Medio">Medio</option>
+                           <option value="Bajo">Bajo</option>
+                      </select>
+                   </div>
+                   <div class="form-group p-2">
+                    <legend>Escalado A</legend><input class="border" type="text" formControlName="EscaladoA" placeholder="">
+                   </div>
+                   <div class="form-group p-2">
+                    <legend>Fecha Escalamiento</legend> <input class="border" type="date" formControlName="FechaEscalamiento" placeholder="" required> 
+                  </div>
+                  <div class="form-group p-2">
+                   <legend>Hora Escalamiento</legend><input class="border" type="time" formControlName="HoraEscalamiento" placeholder="" required>
+                  </div>
+                  <div class="form-group p-2">
+                    <legend>Escalado Por</legend><input class="border" type="text" formControlName="EscaladoPor" placeholder="">
+                   </div>
+                   <div class="form-group p-2">
+                    <legend>Recibido Por</legend><input class="border" type="text" formControlName="RecibidoPor" placeholder="">
+                   </div>
+                   <div class="form-group p-2">
+                    <legend>Estado</legend><select class="border" formControlName="Estado" required>
+                          <option value=""></option>
+                          <option value="Asignado">Asignado</option>
+                          <option value="Pendiente">Pendiente</option>
+                          <option value="Reasignado">Reasignado</option>
+                          <option value="Relacionado">Relacionado</option>
+                          <option value="Resuelto">Resuelto</option>
+                          <option value="Devuelto">Devuelto</option>
+                      </select>
+                   </div>
+                 <div class="form-group p-2">
+                  <legend>Resolución</legend><textarea class="border" type="text" formControlName="Resolucion" placeholder=""> </textarea>
+                 </div>
+                 <div class="form-group p-2">
+                    <legend>Fecha Cierre</legend> <input class="border" type="date" formControlName="FechaCierre" placeholder=""> 
+                  </div>
+                  <div class="form-group p-2">
+                   <legend>Hora Cierre</legend><input class="border" type="time" formControlName="HoraCierre" placeholder="">
+                  </div>
+                                  
+                 
+                 <button class="btn btn-primary m-3">
+                     Clean
+                 </button>
+                 <button class="btn btn-secondary m-3">
+                     Save
+                 </button>
+                
+             </form>
+             
+        </div>
+    </div>
+ </div>
+
+ <form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
