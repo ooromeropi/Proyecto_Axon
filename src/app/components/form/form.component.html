@@ -1,0 +1,630 @@
+
+
+
+<div class="col-md-8 p-4 container p-2 ">
+  <nav class="navbar navbar-dark bg-dark border card body p-2">
+    <div class="container p-2">
+      <a class="navbar-brand titulo"> {{ titulo | uppercase }}</a>
+    </div>
+  </nav>
+  <div class="card p-2">
+
+
+    <div class="container">
+      <div class="row">
+        <form class="container" [formGroup]="IncidentsForm" (ngSubmit)="addIncident(IncidentsForm)">
+
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Descripcion</legend><textarea class="border" formControlName="Descripcion" type="text"
+                  placeholder="" required> </textarea>
+                  <div class="color" *ngIf="Descripcion.invalid">
+                    <div class=""></div>
+                        Campo Obligatorio
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>FechaLlamada</legend> <input class="border" type="date" formControlName="FechaLlamada"
+                  placeholder="">
+                <input class="border" type="time" formControlName="HoraLlamada" placeholder="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>FechaCorreo</legend> <input class="border" type="date" formControlName="FechaCorreo"
+                  placeholder="">
+                <input class="border" type="time" formControlName="HoraCorreo" placeholder="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Num Req</legend><input class="border" type="text" formControlName="NumReq" placeholder=""
+                  required>
+              </div>
+              <div class="color" *ngIf="NumReq.invalid">
+                <div class="container-error-message"></div>
+                    Campo Obligatorio
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Num Inc</legend><input class="border" type="text" formControlName="NumInc" placeholder=""
+                  required>
+              </div>
+              <div class="color" *ngIf="NumInc.invalid">
+                <div class="container-error-message"></div>
+                    Campo Obligatorio
+              </div>
+            </div>
+            </div>
+          
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Area Reporte</legend><select class="border" formControlName="AreaReporte" required>
+                  <option value=""></option>
+                  <option value="B2B">B2B</option>
+                  <option value="ASEGURAMIENTO TÉCNICO">ASEGURAMIENTO TÉCNICO</option>
+                  <option value="OTROS">OTROS</option>
+                  <option value="BACKOFFICE">BACKOFFICE</option>
+                  <option value="BACKOFFICE TELEFÓNICA">BACKOFFICE TELEFÓNICA</option>
+                  <option value="BI">BI</option>
+                  <option value="CARTERA">CARTERA</option>
+                  <option value="CCST">CCST</option>
+                  <option value="CELULA BOTANA">CELULA BOTANA</option>
+                  <option value="CELULA SULIS">CELULA SULIS</option>
+                  <option value="CENTRO DE COMPUTO">CENTRO DE COMPUTO</option>
+                  <option value="CENTRO DE GESTIÓN">CENTRO DE GESTIÓN</option>
+                  <option value="CENTRO DE COMANDO">CENTRO DE COMANDO</option>
+                  <option value="CENTROS DE EXPERIENCIA">CENTROS DE EXPERIENCIA</option>
+                  <option value="COBRANZAS">COBRANZAS</option>
+                  <option value="COMDATA">COMDATA</option>
+                  <option value="CONTROL Y CALIDAD DE VENTAS">CONTROL Y CALIDAD DE VENTAS</option>
+                  <option value="DESARROLLO">DESARROLLO</option>
+                  <option value="DIRECCION COMERCIAL">DIRECCION COMERCIAL</option>
+                  <option value="DIRECCION DE MERCADEO">DIRECCION DE MERCADEO</option>
+                  <option value="DIRECCION DE REDES Y OPERACIONES">DIRECCION DE REDES Y OPERACIONES</option>
+                  <option value="DIRECCION EMPRESAS">DIRECCION EMPRESAS</option>
+                  <option value="GESTION DE RED">GESTION DE RED</option>
+                  <option value="GESTION Y SOPORTE DE CLIENTES">GESTION Y SOPORTE DE CLIENTES</option>
+                  <option value="LOGISTICA">LOGISTICA</option>
+                  <option value="Mejoramiento y transformacion TI">Mejoramiento y transformacion TI</option>
+                  <option value="MESA TI">MESA TI</option>
+                  <option value="MIGRACIONES">MIGRACIONES</option>
+                  <option value="MONITOREO">MONITOREO</option>
+                  <option value="OPERACIONES COMERCIALES">OPERACIONES COMERCIALES</option>
+                  <option value="PQRS">PQRS</option>
+                  <option value="PROCESAMIENTO DE DATA">PROCESAMIENTO DE DATA</option>
+                  <option value="RECAUDO">RECAUDO</option>
+                  <option value="RECLAMACION">RECLAMACION</option>
+                  <option value="RIESGO CREDITICIO">RIESGO CREDITICIO</option>
+                  <option value="SME">SME</option>
+                  <option value="SOPORTE">SOPORTE</option>
+                  <option value="SOPORTE ANTIFRAUDE">SOPORTE ANTIFRAUDE</option>
+                  <option value="SOPORTE NIVEL I">SOPORTE NIVEL I</option>
+                  <option value="SOPORTE NIVEL II">SOPORTE NIVEL II</option>
+                  <option value="TREN PREPAGO">TREN PREPAGO</option>
+                  <option value="WORKPLACE">WORKPLACE</option>
+                   <option value="CELULA ATLANTIS">CELULA ATLANTIS</option>
+                </select>
+              </div>
+              <div class="color" *ngIf="AreaReporte.invalid">
+                <div class="container-error-message"></div>
+                    Campo Obligatorio
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Aplicacion</legend><select class="border" formControlName="Aplicacion">
+                  <option value=""></option>
+                  <option value="APP">APP</option>
+                  <option value="ATIS">ATIS</option>
+                  <option value="Averia PGI">Averia PGI</option>
+                  <option value="BackOffice">BackOffice</option>
+                  <option value="BD BINGO">BD BINGO</option>
+                  <option value="BD DBcart">BD DBcart</option>
+                  <option value="BD SPN">BD SPN</option>
+                  <option value="BD VALIDAFS">BD VALIDAFS</option>
+                  <option value="BIOMETRICS">BIOMETRICS</option>
+                  <option value="BOT WHATSAP">BOT WHATSAP</option>
+                  <option value="BOT WHATSAPP">BOT WHATSAPP</option>
+                  <option value="CAJAS RECAUDADORAS">CAJAS RECAUDADORAS</option>
+                  <option value="CARTERIZA">CARTERIZA</option>
+                  <option value="CCPULCE">CCPULCE</option>
+                  <option value="CENSISTA">CENSISTA</option>
+                  <option value="CHATBOT">CHATBOT</option>
+                  <option value="CLIENTE INTERNO">CLIENTE INTERNO</option>
+                  <option value="CLOUDCONTROL">CLOUDCONTROL</option>
+                  <option value="CONOCEME TI">CONOCEME TI</option>
+                  <option value="DAVOX">DAVOX</option>
+                  <option value="E-SHOP">E-SHOP</option>
+                  <option value="EMA">EMA</option>
+                  <option value="ENLACE MOVISTAR">ENLACE MOVISTAR</option>
+                  <option value="EOC">EOC</option>
+                  <option value="ESCRITORIOS VIRTUALES">ESCRITORIOS VIRTUALES</option>
+                  <option value="EXPLORA">EXPLORA</option>
+                  <option value="FACTEL">FACTEL</option>
+                  <option value="GAX">GAX</option>
+                  <option value="GENESYS">GENESYS</option>
+                  <option value="GEOTECNICO">GEOTECNICO</option>
+                  <option value="GESCODE">GESCODE</option>
+                  <option value="GESREC">GESREC</option>
+                  <option value="GESTEL">GESTEL</option>
+                  <option value="Gestor Bancario Byte">Gestor Bancario Byte</option>
+                  <option value="GESTOR DE COLAS">GESTOR DE COLAS</option>
+                  <option value="GESTORES DE RECARGAS">GESTORES DE RECARGAS</option>
+                  <option value="Greta">Greta</option>
+                  <option value="GVP">GVP</option>
+                  <option value="HADA">HADA</option>
+                  <option value="HC">HC</option>
+                  <option value="HCO">HCO</option>
+                  <option value="ICA">ICA</option>
+                  <option value="INFOMART">INFOMART</option>
+                  <option value="INFOVIEW">INFOVIEW</option>
+                  <option value="INTRARED">INTRARED</option>
+                  <option value="INTRAWAY">INTRAWAY</option>
+                  <option value="IPTV">IPTV</option>
+                  <option value="IUL">IUL</option>
+                  <option value="IVR">IVR</option>
+                  <option value="IWS">IWS</option>
+                  <option value="KIBANA">KIBANA</option>
+                  <option value="KORAL">KORAL</option>
+                  <option value="LEGADOS">LEGADOS</option>
+                  <option value="M-CARE">M-CARE</option>
+                  <option value="MAQUINAS RECAUDADORAS">MAQUINAS RECAUDADORAS</option>
+                  <option value="MEDIADOR CONVERGENTE">MEDIADOR CONVERGENTE</option>
+                  <option value="METROTEL">METROTEL</option>
+                  <option value="MOVISTAR MAS">MOVISTAR MAS</option>
+                  <option value="MSM">MSM</option>
+                  <option value="MTH">MTH</option>
+                  <option value="NA">NA</option>
+                  <option value="NABIS">NABIS</option>
+                  <option value="NOVEDADES">NOVEDADES</option>
+                  <option value="OIM">OIM</option>
+                  <option value="ONE SYSTEM">ONE SYSTEM</option>
+                  <option value="ONELL">ONELL</option>
+                  <option value="OPS">OPS</option>
+                  <option value="ORDENES CRM">ORDENES CRM</option>
+                  <option value="OTROS">OTROS</option>
+                  <option value="PAQUETES TIENDA">PAQUETES TIENDA</option>
+                  <option value="PCO">PCO</option>
+                  <option value="PDA">PDA</option>
+                  <option value="PORTAL VDS">PORTAL VDS</option>
+                  <option value="PROCESOS ENCOLADOS">PROCESOS ENCOLADOS</option>
+                  <option value="RED CORPORTATIVA">RED CORPORTATIVA</option>
+                  <option value="REDEBAN">REDEBAN</option>
+                  <option value="REMEDY">REMEDY</option>
+                  <option value="REMEDY EMPRESAS">REMEDY EMPRESAS</option>
+                  <option value="RNOVA">RNOVA</option>
+                  <option value="ROBOT">ROBOT</option>
+                  <option value="Rundeck">Rundeck</option>
+                  <option value="SALESFORCE">SALESFORCE</option>
+                  <option value="SAP">SAP</option>
+                  <option value="SAP-CUFE">SAP-CUFE</option>
+                  <option value="SCL">SCL</option>
+                  <option value="SCR">SCR</option>
+                  <option value="SCRIBA">SCRIBA</option>
+                  <option value="SERVIDOR">SERVIDOR</option>
+                  <option value="SGT">SGT</option>
+                  <option value="SIGRES">SIGRES</option>
+                  <option value="SINTEL">SINTEL</option>
+                  <option value="SIP">SIP</option>
+                  <option value="SIRS">SIRS</option>
+                  <option value="SOA">SOA</option>
+                  <option value="SOM">SOM</option>
+                  <option value="SPEECHMINER">SPEECHMINER</option>
+                  <option value="SPN">SPN</option>
+                  <option value="TABLA CRM">TABLA CRM</option>
+                  <option value="TEAMS">TEAMS</option>
+                  <option value="TELCO">TELCO</option>
+                  <option value="TIAXA">TIAXA</option>
+                  <option value="TOA">TOA</option>
+                  <option value="TOL">TOL</option>
+                  <option value="TOOLBOX">TOOLBOX</option>
+                  <option value="TRADUCTOR IUL">TRADUCTOR IUL</option>
+                  <option value="TRUESIGHT BMC">TRUESIGHT BMC</option>
+                  <option value="URL">URL</option>
+                  <option value="USSD">USSD</option>
+                  <option value="WEB">WEB</option>
+                  <option value="WEB SERVICE DEPAGOS">WEB SERVICE DEPAGOS</option>
+                  <option value="XIMON">XIMON</option>
+                  <option value="SINCOLA">SINCOLA</option>
+                  <option value="TRACKING">TRACKING</option>
+                  <option value="OBRAS CIVILES">OBRAS CIVILES</option>
+                  <option value="MCARE">MCARE</option>
+                  <option value="IMPRESORA">IMPRESORA</option>
+                  <option value="GDM">GDM</option>
+                  <option value="LENTITUD EN CONEXIÓN">LENTITUD EN CONEXIÓN</option>
+                  <option value="CAIDA DE RED">CAIDA DE RED</option>
+                  <option value="ACCESO A RUTAS COMPARTIDAS">ACCESO A RUTAS COMPARTIDAS</option>
+                  <option value="CONEXIÓN AL APLICATIVO">CONEXIÓN AL APLICATIVO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Tipologia</legend><select class="border" formControlName="Tipologia" required>
+                  <option value=""></option>
+                  <option value="MASIVO">MASIVO</option>
+                  <option value="NO MASIVO">NO MASIVO</option>
+                  <option value="ALARMA">ALARMA</option>
+                  <option value="RECLAMACIÓN">RECLAMACIÓN</option>
+                  <option value="CRITICO">CRITICO</option>
+                  <option value="CASO NO CUMPLE POLITICAS">CASO NO CUMPLE POLITICAS</option>
+                  <option value="CASO DE DIRECCIONAMIENTO">CASO DE DIRECCIONAMIENTO</option>
+                </select>
+              </div>
+              <div class="color" *ngIf="Tipologia.invalid">
+                <div class="container-error-message"></div>
+                    Campo Obligatorio
+              </div>
+               </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Impacto</legend><select class="border" formControlName="Impacto">
+                  <option value=""></option>
+                  <option value="Alto">Alto</option>
+                  <option value="Medio">Medio</option>
+                  <option value="Bajo">Bajo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Escalado A</legend><select class="border" formControlName="EscaladoA">
+                  <option value=""></option>
+                  <option value="INCIDENTES">INCIDENTES</option>
+                  <option value="NIVEL 2">NIVEL 2</option>
+                  <option value="JEFATURA CALL CENTER">JEFATURA CALL CENTER</option>
+                  <option value="NA">NA</option>
+                  <option value="BACKOFFICE FIJA">BACKOFFICE FIJA</option>
+                  <option value="BACKOFFICE MOVIL">BACKOFFICE MOVIL</option>
+                  <option value="N1 FIJA">N1 FIJA</option>
+                  <option value="N1 MOVIL">N1 MOVIL</option>
+                  <option value="RECAUDO">RECAUDO</option>
+                  <option value="SEGUMIENTO POR ENTREGA DE TURNO">SEGUMIENTO POR ENTREGA DE TURNO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Fecha Escalamiento</legend> <input class="border" type="date"
+                  formControlName="FechaEscalamiento" placeholder="">
+                <input class="border" type="time" formControlName="HoraEscalamiento" placeholder="">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Escalado Por</legend><select class="border" formControlName="EscaladoPor">
+                  <option value=""></option>
+                  <option value="AGUILAR QUIROGA YUBER ">AGUILAR QUIROGA YUBER </option>
+                  <option value="BARRIOS SANTAMARIA JESUS DAVID">BARRIOS SANTAMARIA JESUS DAVID</option>
+                  <option value="BEJARANO LONDOÑO CRISTIAN CAMILO">BEJARANO LONDOÑO CRISTIAN CAMILO</option>
+                  <option value="FONSECA PABON HAROLD MAURICIO">FONSECA PABON HAROLD MAURICIO</option>
+                  <option value="GAMBA MONTOYA MYRIAM">GAMBA MONTOYA MYRIAM</option>
+                  <option value="LEMUS PAMPLONA PAULA ANDREA">LEMUS PAMPLONA PAULA ANDREA</option>
+                  <option value="MEDINA PAREDES BERNARDA MELANIA">MEDINA PAREDES BERNARDA MELANIA</option>
+                  <option value="MUÑOZ BUSTOS KEVIN ALEXANDER">MUÑOZ BUSTOS KEVIN ALEXANDER</option>
+                  <option value="PARDO CRIOLLO CRISTIAN CAMILO">PARDO CRIOLLO CRISTIAN CAMILO</option>
+                  <option value="PORRAS SUAREZ LAURA XIMENA">PORRAS SUAREZ LAURA XIMENA</option>
+                  <option value="PRADA RUBIO BRIAM ALEJANDRO">PRADA RUBIO BRIAM ALEJANDRO</option>
+                  <option value="RODRIGEZ AREVALO SANTIAGO ALEJANDRO">RODRIGEZ AREVALO SANTIAGO ALEJANDRO</option>
+                  <option value="RODRIGUEZ HIGUERA CHRISTIAN EDUARDO">RODRIGUEZ HIGUERA CHRISTIAN EDUARDO</option>
+                  <option value="VARELA RODRIGUEZ BRANDON ESTIVENN">VARELA RODRIGUEZ BRANDON ESTIVENN</option>
+                  <option value="ARMERO MORENO PAOLA ANDREA">ARMERO MORENO PAOLA ANDREA</option>
+                  <option value="CIFUENTES GUERRA LUIS">CIFUENTES GUERRA LUIS</option>
+                  <option value="DIAZ SALAZAR GABRIEL ALONSO">DIAZ SALAZAR GABRIEL ALONSO</option>
+                  <option value="GAHONA TRUJILLO CRISTIAN ANDRES">GAHONA TRUJILLO CRISTIAN ANDRES</option>
+                  <option value="GONZALEZ DIAZ GABRIEL ALEJANDRO">GONZALEZ DIAZ GABRIEL ALEJANDRO</option>
+                  <option value="MARIN JUYO LORENA STEFANNY">MARIN JUYO LORENA STEFANNY</option>
+                  <option value="NIEVES VALENZUELA MARIA CRISTINA">NIEVES VALENZUELA MARIA CRISTINA</option>
+                  <option value="PEDRAZA PEÑA OSCAR LEONARDO">PEDRAZA PEÑA OSCAR LEONARDO</option>
+                  <option value="RAMOS URBINA PAOLA ANDREA">RAMOS URBINA PAOLA ANDREA</option>
+                  <option value="RAMIREZ MONTENEGRO JULIAN DAVID ">RAMIREZ MONTENEGRO JULIAN DAVID </option>
+                  <option value="SIERRA NUÑEZ LADY JOHANA">SIERRA NUÑEZ LADY JOHANA</option>
+                  <option value="TORRES ARROYO OMAR ADOLFO">TORRES ARROYO OMAR ADOLFO</option>
+                  <option value="VARGAS HERRERA JUAN FELIPE ">VARGAS HERRERA JUAN FELIPE </option>
+                  <option value="CHALAPUD PEDRAZA YAMID ESTEBAN">CHALAPUD PEDRAZA YAMID ESTEBAN</option>
+                  <option value="HERNANDEZ PEREZ YESID GIOVANNI">HERNANDEZ PEREZ YESID GIOVANNI</option>
+                  <option value="MORENO MOSQUERA CLAUDIA MARCELA">MORENO MOSQUERA CLAUDIA MARCELA</option>
+                  <option value="VANEGAS BOCANEGRA DEIVID FERNANDO ">VANEGAS BOCANEGRA DEIVID FERNANDO </option>
+                  <option value="VASQUEZ CACERES MICHAEL STEVEN">VASQUEZ CACERES MICHAEL STEVEN</option>
+                  <option value="VASQUEZ RINCON INGRID JULIETH">VASQUEZ RINCON INGRID JULIETH</option>
+                  <option value="BUSTOS BRICEÑO MONICA ALEJANDRA">BUSTOS BRICEÑO MONICA ALEJANDRA</option>
+                  <option value="CACERES RODRIGUEZ DIANA MILENA">CACERES RODRIGUEZ DIANA MILENA</option>
+                  <option value="GARCIA CASALLAS JOSE GILBERTO">GARCIA CASALLAS JOSE GILBERTO</option>
+                  <option value="GARCIA HERNANDEZ CRISTIAN DUBAN">GARCIA HERNANDEZ CRISTIAN DUBAN</option>
+                  <option value="GARZON MAHECHA DAVID ALBERTO">GARZON MAHECHA DAVID ALBERTO</option>
+                  <option value="REY GUEVARA LAUDY CRISTINA">REY GUEVARA LAUDY CRISTINA</option>
+                  <option value="REYES ROJAS YOHAN NICOLAS">REYES ROJAS YOHAN NICOLAS</option>
+                  <option value="BARRERA BERNAL GISELL XIOMARA">BARRERA BERNAL GISELL XIOMARA</option>
+                  <option value="CRUZ CRUZ JOSE SALVADOR">CRUZ CRUZ JOSE SALVADOR</option>
+                  <option value="GONZALEZ GUALTEROS ANDERSSON">GONZALEZ GUALTEROS ANDERSSON</option>
+                  <option value="GUTIERREZ RAMIREZ BRIAN RICARDO">GUTIERREZ RAMIREZ BRIAN RICARDO</option>
+                  <option value="LEAL FALLA JUAN FELIPE">LEAL FALLA JUAN FELIPE</option>
+                  <option value="PLAZAS SANCHEZ RUTH MELINA">PLAZAS SANCHEZ RUTH MELINA</option>
+                  <option value="PUENTES SÁNCHEZ YILMAR YAMID">PUENTES SÁNCHEZ YILMAR YAMID</option>
+                  <option value="RAMIREZ FEO JENNY CAROLINA">RAMIREZ FEO JENNY CAROLINA</option>
+                  <option value="SANABRIA SOLANO DIANA LORENA">SANABRIA SOLANO DIANA LORENA</option>
+                  <option value="SANCHEZ PRADA HILDA MARIA">SANCHEZ PRADA HILDA MARIA</option>
+                  <option value="TORRES DIAZ CESAR JULIAN">TORRES DIAZ CESAR JULIAN</option>
+                  <option value="ZAQUE ARCOS CLAUDIA PATRICIA ">ZAQUE ARCOS CLAUDIA PATRICIA </option>
+                  <option value="RODRIGUEZ DURAN JOHAN SEBASTIAN">RODRIGUEZ DURAN JOHAN SEBASTIAN</option>
+                  <option value="PADILLA MORENO DIEGO ARMANDO">PADILLA MORENO DIEGO ARMANDO</option>
+                  <option value="GIRALDO AGUDELO CAROLINA">GIRALDO AGUDELO CAROLINA</option>
+                  <option value="BOHORQUEZ ORJUELA MAIRA ALEJANDRA">BOHORQUEZ ORJUELA MAIRA ALEJANDRA</option>
+                  <option value="ACOSTA DIAZ ASTRID VIVIANA">ACOSTA DIAZ ASTRID VIVIANA</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Recibido Por</legend><input class="border" type="text" formControlName="RecibidoPor"
+                  placeholder="">
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Estado</legend><select class="border" formControlName="Estado" required>
+                  <option value=""></option>
+                  <option value="FLUJO TRADICIONAL">FLUJO TRADICIONAL</option>
+                  <option value="PENDIENTE SOPORTES">PENDIENTE SOPORTES</option>
+                  <option value="RESUELTO">RESUELTO</option>
+                  <option value="ASIGNADO">ASIGNADO</option>
+                  <option value="RECHAZADO">RECHAZADO</option>
+                </select>
+              </div>
+              <div class="color" *ngIf="Estado.invalid">
+                <div class="container-error-message"></div>
+                    Campo Obligatorio
+              </div>
+             </div>
+            </div> 
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Notas</legend><textarea class="border" type="text" formControlName="Notas"
+                  placeholder=""> </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Observaciones</legend><textarea class="border" type="text" formControlName="Observaciones"
+                  placeholder=""> </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>ProductoAfectado</legend><select class="border" formControlName="ProductoAfectado">
+                  <option value=""></option>
+                  <option value="Fija">Fija</option>
+                  <option value="Móvil">Móvil</option>
+                  <option value="Convergente">Convergente</option>
+                  <option value="Otros">Otros</option>
+                  </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                   <legend>FechaCumplePoliticas</legend> <input class="border" type="date" formControlName="FechaCp"
+                  placeholder="">
+                <input class="border" type="time" formControlName="HoraCp" placeholder="">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>CausalNoAtención</legend><input class="border" type="text" formControlName="CausalNoAtencion"
+                  placeholder="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Falla</legend><textarea class="border" type="text" formControlName="Falla"
+                placeholder=""> </textarea>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                  <legend>FechaSolicitudApoyo</legend> <input class="border" type="date" formControlName="FechaSa"
+                placeholder="">
+              <input class="border" type="time" formControlName="HoraSa" placeholder="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>CausalRechazoInci</legend><input class="border" type="text" formControlName="CausalRecInci"
+                  placeholder="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>FechaDutty</legend> <input class="border" type="date" formControlName="FechaDutty"
+                placeholder="">
+              <input class="border" type="time" formControlName="HoraDutty" placeholder="">
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-center">
+              
+            <!--<div class="alert-danger" *ngIf="this.incidentService.getNetUser()=='TANIS'">-->
+            <div class="color" *ngIf="this.incidentService.getNetUser()=='OOROMEROPI' || 
+                                      this.incidentService.getNetUser()=='KSANCHOOI' ||
+                                      this.incidentService.getNetUser()=='FJRODRIGUEES' ||
+                                      this.incidentService.getNetUser()=='MACHAVEZHU' ||
+                                      this.incidentService.getNetUser()=='AMMARTINEZBE' ||
+                                      this.incidentService.getNetUser()=='JWRIOSLO' ||
+                                      this.incidentService.getNetUser()=='ALVARO.ESPITIA' ||
+                                      this.incidentService.getNetUser()=='JTORRESDI'">
+              <div class="card-body">
+                <legend>Excluible</legend>
+                <select class="border" formControlName="Excluible">
+                  <option value=""></option>
+                  <option value="Si">Si</option>
+                  <option value="No">No</option>
+                </select>
+              
+                
+
+
+              </div>
+            </div>
+            
+          </div>
+
+
+          <!--  <div class="col-md-4 p-2">
+
+              <div class="card text-center">
+                <div class="card-body">
+                  <legend>UsrCreador</legend><input class="border" type="text" formControlName="UsrCreador"
+                    placeholder="">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 p-2">
+
+              <div class="card text-center">
+                <div class="card-body">
+                  <legend>UsrModifica</legend><input class="border" type="text" formControlName="UsrModifica"
+                    placeholder="">
+                </div>
+              </div>
+            </div> -->
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Resolucion</legend><textarea class="border" type="text" formControlName="Resolucion"
+                  placeholder=""> </textarea>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Fecha Cierre</legend> <input class="border" type="date" formControlName="FechaCierre"
+                  placeholder="">
+                <input class="border" type="time" formControlName="HoraCierre" placeholder="">
+              </div>
+            </div>
+          </div>
+
+
+          <button class="btn btn-primary m-3" routerLink="/home" routerLinkActive="active">
+            Cancel
+          </button>
+          <button class="btn btn-secondary m-3">
+            Save
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
