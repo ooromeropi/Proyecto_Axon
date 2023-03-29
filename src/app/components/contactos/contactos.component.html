@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+  
+  
+    </div>
+  </div>
+  
+  <div>
+  
+  
+  
+  
+    <div class="col-md-3 p-2 " id="div1">
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <!-- <div id="torr"><th></th></div>-->
+            
+            <th>Nombre</th>
+            <th>Oncall</th>
+            <th>Ext</th>
+            <th>Correo</th>
+            <th>Bandeja</th>
+            
+  
+          </tr>
+        </thead>
+        <tbody class="container-fluid">
+          <tr
+            *ngFor="let contact of contactService.contacto">
+              
+           
+            <td>{{ contact.nombre }}</td>
+            <td>{{ contact.oncall }} </td>
+            <td>{{ contact.ext }} </td>
+            <td>{{ contact.correo }} </td>
+            <td>{{ contact.bandeja }} </td>
+            
+  
+
+          </tr>
+        </tbody>
+        
+      </table>
+      
+    </div>
+    
+  
+  </div>
+  

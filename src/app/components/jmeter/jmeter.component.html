@@ -1,0 +1,61 @@
+<div class="col-md-3 p-2 container p-2 ">
+
+    <div class="card p-2">
+
+
+        <div class="container">
+            <div class="row">
+                <form class="container" [formGroup]="ServiceJmiter" (ngSubmit)="servJmeter(ServiceJmiter)">
+
+                    <div class="col-md-auto p-2">
+
+                        <div class="card text-center">
+                            <div class="card-body">
+
+                                <legend>Servicio</legend><select class="border" formControlName="jmiter">
+                                    <option value=""></option>
+                                    <option value="JM_File_Tiaxa_Alta">Tiaxa_Alta</option>
+                                    <option value="JM_File_Tiaxa_Baja">Tiaxa_Baja</option>
+                                    <option value="JM_File_Volte_Baja">Volte_Baja</option>
+                                    <option value="JM_File_AA_Cambio_Ciclo">AA_Cambio_Ciclo</option>
+                                    <option value="JM_File_AA_MultipleID_Alta">AA_MultipleID_Alta</option>
+                                    <option value="JM_File_AA_MultipleID_Baja">AA_MultipleID_Baja</option>
+                                    <option value="JM_File_AA_MultipleID_Mod">AA_MultipleID_Mod</option>
+                                    <option value="JM_File_PCRF_Mod">PCRF_Mod</option>
+                                    <option value="JM_File_Cambio_Plan_Familia">Cambio_Plan_Familia</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <button class="btn btn-primary m-4" routerLink="/home" routerLinkActive="active">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-secondary m-4">
+                        Ejecutar
+                    </button>
+
+                </form>
+                
+            </div>
+        </div>
+        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+           <!-- <div class="card-header">Informacion</div>
+            <div class="card-body">
+              <h4 class="card-title"></h4>
+              <p class="card-text">Por favo verificar el log de la ejecucion en la ruta Output_Hist del servidor 10.203.222.182</p>
+            </div>
+          </div>-->
+          
+    </div>
+</div>

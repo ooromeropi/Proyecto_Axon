@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <div class="row">
+
+
+    
+    <div class="col-md-auto p-1">
+
+      <div class="card text-center">
+        <div class="card-body">
+          <a class="btn btn-primary p-1" routerLink="/form">Nuevo Incidente</a>
+          
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="col-md-auto p-1">
+
+      <div class="card text-center">
+        <div class="card-body">
+          <button class="btn btn-light p-1" (click)="exportAsXLSX()">Descarga</button>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <div class="col-md-auto p-1">
+
+      <div class="card text-center">
+        <div class="card-body">
+          <a class="btn btn-light p-1" routerLink="/contactos">Contactos</a>
+          
+        </div>
+        
+      </div>
+    </div>
+
+
+    <div class="card-body p-2">
+      <nav>
+        <div>
+          
+          <input type="text" class="form-control" name="filterReq" placeholder="Search..." [(ngModel)]="filterReq">
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div>
+
+
+
+
+  <div class="col-md-auto p-2 " id="div1">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <!-- <div id="torr"><th></th></div>-->
+          
+          <th class="sticky">DESCRIPCION</th>
+          <th>FECHA_LLAMADA</th>
+          <th>FECHA___CORREO</th>
+          <th>NUM_REQ</th>
+          <th>NUM_INCI</th>
+          <th>AREA_REPORTE</th>
+          <th>APLICACION</th>
+          <th>TIPO_DE_INGRESO</th>
+          <th>IMPACTO</th>
+          <th>ESCALADO_A</th>
+          <th>FECHA_ESCALAMIENTO</th>
+          <th>ESCALADO_POR</th>
+          <th>RECIBIDO_POR</th>
+          <th>ESTADO</th>
+          <th>NOTAS</th>
+          <th>OBSERVACIONES</th>
+          <th>PRODUCTO_AFECTADO</th>
+          <th>FECHA_CUMPLE_POLITICAS</th>
+         <!-- <th>CausalNoAtencion</th>
+          <th>Falla</th>-->
+          <th>FECHA_SOLICITUD_APOYO_INTERNO</th>
+          <th>CAUSAL_RECHAZO_INCI</th>
+          <th>FECHA_DUTTY</th>
+          <th>EXCLUIBLE</th>
+          <th>USR_CREADOR</th>
+          <th>USR_MODIFICA</th>
+          <th>USR_EXCLUYE</th>
+          <th>RESOLUCION</th>
+          <th>FECHA____CIERRE</th>
+          <th>SLA</th>
+          <th>MEDIBLE</th>
+          <th>CUMPLIMIENTO</th>
+
+        </tr>
+      </thead>
+      <tbody class="container-fluid">
+        <tr
+          *ngFor="let incident of incidentService.incidents | filter:filterReq | paginate: { itemsPerPage: tableSize,
+            currentPage: pageActual,
+            totalItems: count }">
+            
+         
+              
+          <td class="sticky">
+            <P>{{ incident.Descripcion }} </P>
+          </td>
+          <td>{{ incident.FechaLlamada }}</td>
+          <td>{{ incident.FechaCorreo }} </td>
+          <td>{{ incident.NumReq }} </td>
+          <td>{{ incident.NumInc }} </td>
+          <td>{{ incident.AreaReporte }} </td>
+          <td>{{ incident.Aplicacion }} </td>
+          <td>{{ incident.Tipologia }} </td>
+          <td>{{ incident.Impacto }} </td>
+          <td>{{ incident.EscaladoA }} </td>
+          <td>{{ incident.FechaEscalamiento }} </td>
+          <td>{{ incident.EscaladoPor }} </td>
+          <td>{{ incident.RecibidoPor }} </td>
+          <td>{{ incident.Estado }} </td>
+          <td>
+            <P>{{ incident.Notas }} </P>
+          </td>
+          <td>
+            <P>{{ incident.Observaciones }} </P>
+          </td>
+          <td>{{ incident.ProductoAfectado }} </td>
+          <td>{{ incident.FechaCp }} </td>
+          <td>{{ incident.FechaSa }} </td>
+          <td>{{ incident.CausalRecInci }} </td>
+          <td>{{ incident.FechaDutty }} </td>
+          <td>{{ incident.Excluible }} </td>
+          <td>{{ incident.UsrCreador }} </td>
+          <td>{{ incident.UsrModifica }} </td>
+          <td>{{ incident.UsrExcluye }} </td>
+          <td>
+            <P>{{ incident.Resolucion }} </P>
+          </td>
+          <td>{{ incident.FechaCierre }} </td>
+          <td>{{ incident.SLA }} </td>
+          <td>{{ incident.Medible }} </td>
+          <td>{{ incident.Cumplimiento }} </td>
+
+          <td>
+            <button class="btn btn-secondary btn-sm">
+              <i class="material-icons" routerLink="/form/{{incident._id}}">edit</i>
+            </button>
+           
+
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+    
+  </div>
+  
+
+</div>
+<pagination-controls previousLabel="Prev"
+nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>

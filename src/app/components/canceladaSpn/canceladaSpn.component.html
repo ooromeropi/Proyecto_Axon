@@ -1,0 +1,114 @@
+<div class="container-fluid">
+  <div class="row">
+
+
+    
+    <div class="col-md-auto p-1">
+
+      <div class="card text-center">
+        <div class="card-body">
+          <a class="btn btn-primary p-1" routerLink="/formCanSpn">Registrar_Gestion</a>
+          
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="col-md-auto p-1">
+
+      <div class="card text-center">
+        <div class="card-body">
+          <button class="btn btn-light p-1" (click)="exportAsXLSX()">Descarga</button>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    
+
+
+    <div class="card-body p-2">
+      <nav>
+        <div>
+          
+          <input type="text" class="form-control" name="filterReq" placeholder="Search..." [(ngModel)]="filterReq">
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div>
+
+
+
+
+  <div class="col-md-auto p-2 " id="div1">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <!-- <div id="torr"><th></th></div>-->
+          
+          <th class="sticky">Numero_Portado</th>
+          <th>Tipo Negocio</th>
+          <th>Linea Nativa</th>
+          <th>FVC</th>
+          <th>Estado spn</th>
+          <th>Estado Orden</th>
+          <th>Motivo Cancelacion</th>
+          <th>Gestion Canceladas</th>
+          <th>UsrCreador</th>
+          <th>UsrModifica</th>
+          <th>FecRegistro</th>
+          <th>FecUltMod</th>
+          <th>Observacion</th>
+       
+        </tr>
+      </thead>
+      <tbody class="container-fluid">
+        <tr
+          *ngFor="let canceladaSpn of canceladaSpnService.canceladaspn | paginate: { itemsPerPage: tableSize,
+            currentPage: pageActual,
+            totalItems: count }">
+            
+         
+              
+          <td class="sticky">
+            <P>{{ canceladaSpn.Numero_Portado }} </P>
+          </td>
+          <td>{{ canceladaSpn.Tipo_Negocio }}</td>
+          <td>{{ canceladaSpn.Linea_Nativa }} </td>
+          <td>{{ canceladaSpn.FVC }} </td>
+          <td>{{ canceladaSpn.Estado_spn }} </td>
+          <td>{{ canceladaSpn.Estado_Orden }} </td>
+          <td>{{ canceladaSpn.Motivo_Cancelacion }} </td>
+          <td>{{ canceladaSpn.Gestion_Canceladas }} </td>
+          <td>{{ canceladaSpn.UsrCreador }} </td>
+          <td>{{ canceladaSpn.UsrModifica }} </td>
+          <td>{{ canceladaSpn.createdAt }} </td>
+          <td>{{ canceladaSpn.updatedAt }} </td>
+           <td>{{ canceladaSpn.Observacion }} </td>
+          
+
+          <td>
+            <button class="btn btn-secondary btn-sm">
+              <i class="material-icons" routerLink="/formCanSpn/{{canceladaSpn._id}}">edit</i>
+                                                            
+            </button>
+           
+
+
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+    
+  </div>
+  
+
+</div>
+<pagination-controls previousLabel="Prev"
+nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>  

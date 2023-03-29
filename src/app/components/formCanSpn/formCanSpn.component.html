@@ -1,0 +1,173 @@
+<div class="col-md-8 p-4 container p-2 ">
+  <nav class="navbar navbar-dark bg-dark border card body p-2">
+    <div class="container p-2">
+      <a class="navbar-brand titulo"> {{ titulo | uppercase }}</a>
+    </div>
+  </nav>
+  <div class="card p-2">
+
+
+    <div class="container">
+      <div class="row">
+        <form class="container" [formGroup]="CancelSpnForm" (ngSubmit)="addCancelaSpn(CancelSpnForm)">
+
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Numero Portado</legend><input class="border" formControlName="Numero_Portado" type="text"
+                  placeholder="" required> 
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Tipo Negocio</legend><select class="border" formControlName="Tipo_Negocio" required>
+                  <option value=""></option>
+                  <option value="ChangeNumber">ChangeNumber</option>
+                  <option value="CreateSusbcriber">CreateSusbcriber</option>
+                                            </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Linea Nativa</legend> <input class="border" type="text" formControlName="Linea_Nativa"
+                  placeholder="">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>FVC</legend><input class="border" type="date" formControlName="FVC" placeholder=""
+                  required>
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Estado Spn</legend><select class="border" formControlName="Estado_spn" required>
+                  <option value=""></option>
+                  <option value="Estado Inicial del Proceso de Alim">Estado Inicial del Proceso de Alim</option>
+                  <option value="Enviada ABD">Enviada ABD</option>
+                  <option value="Pendiente Donador">Pendiente Donador</option>
+                  <option value="Aceptada. Pendiente Confirmacion">Aceptada. Pendiente Confirmacion</option>
+                  <option value="Pendiente de Cálculo FVC">Pendiente de Cálculo FVC</option>
+                  <option value="Pendiente confirmación FVC">Pendiente confirmación FVC</option>
+                  <option value="Aceptada">Aceptada</option>
+                  <option value="Pendiente de Envío FVC">Pendiente de Envío FVC</option>
+                  <option value="Conciliada">Conciliada</option>
+                  <option value="Portada">Portada</option>
+                  <option value="Rechazada Donante">Rechazada Donante</option>
+                  <option value="Rechazo FVC">Rechazo FVC</option>
+                  <option value="Pendiente de envio al ABD">Pendiente de envio al ABD</option>
+                  <option value="Pendiente provision">Pendiente provision</option>
+                                                              </select>
+              </div>
+              
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Estado Orden</legend><select class="border" formControlName="Estado_Orden" required>
+                  <option value=""></option>
+                  <option value="FALLIDA">FALLIDA</option>
+                  <option value="EN PROCESO">EN PROCESO</option>
+                  <option value="TERMINADA">TERMINADA</option>
+                  <option value="CANCELADA">CANCELADA</option>
+                                  </select>
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Motivo Cancelacion</legend><select class="border" formControlName="Motivo_Cancelacion">
+                  <option value=""></option>
+                  <option value="CE_BAJA_EJECUTADA_ANALISTA">CE_BAJA_EJECUTADA_ANALISTA</option>
+                  <option value="PO_CANCELADA_FLUJO_PORTABILIDAD">PO_CANCELADA_FLUJO_PORTABILIDAD</option>
+                  <option value="WA_ERROR_REGULARIZACION">WA_ERROR_REGULARIZACION</option>
+                  <option value="OTROS">OTROS</option>
+                  </select>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Gestion_Canceladas</legend><select class="border" formControlName="Gestion_Canceladas" required>
+                  <option value=""></option>
+                  <option value="SI">SI</option>
+                  <option value="NO">NO</option>
+
+                 <!-- <option value="CASO DE DIRECCIONAMIENTO">CASO DE DIRECCIONAMIENTO</option>-->
+                </select>
+              </div>
+              
+            </div>
+          </div>
+
+          
+          <div class="col-md-4 p-2">
+
+            <div class="card text-center">
+              <div class="card-body">
+                <legend>Observacion</legend><textarea class="border" type="text" formControlName="Observacion"
+                  placeholder=""> </textarea>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class=" col-md-4 p-2">
+            <div class="card text-center">
+              
+            </div>
+
+          </div>
+
+
+          <button class="btn btn-primary m-4" routerLink="/home" routerLinkActive="active">
+            Cancel
+          </button>
+          <button class="btn btn-secondary m-4">
+            Save
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
