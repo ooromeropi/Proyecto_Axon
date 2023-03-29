@@ -1,0 +1,24 @@
+ 1.Alta
+ 2.Baja
+ 3.Decremento
+ 4.Incremento
+ 5.Alta2
+ 6.Baja2
+ 7.Decremento2
+ 8.Incremento2
+ 9.Alta3
+10.Baja3
+11.Decremento3
+12.Incremento3
+13.Alta
+14.Baja
+15.Decremento
+16.Incremento
+17.Alta2
+18.Baja2
+19.Decremento2
+20.Incremento2
+21.Alta3
+22.Baja3
+23.Decremento3
+24.Incremento3
